@@ -23,6 +23,19 @@ android {
     }
 }
 
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "gradle.plugin.com.dorongold.plugins:task-tree:1.5"
+    }
+}
+
+apply plugin: "com.dorongold.task-tree"
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
